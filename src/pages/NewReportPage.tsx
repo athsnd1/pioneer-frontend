@@ -12,30 +12,30 @@ import PageInfo from "../components/PageInfo";
 
 type State = {
   date: string;
-  hours: number;
-  visits: number;
-  studies: number;
-  videos: number;
-  books: number;
+  hours: number | "";
+  visits: number | "";
+  studies: number | "";
+  videos: number | "";
+  books: number | "";
   comment: string;
 }
 
 type Action = { type: "set_date"; date: string } | 
-              { type: "set_hours"; hours: number } |
-              { type: "set_visits"; visits: number } |
-              { type: "set_studies"; studies: number } |
-              { type: "set_videos"; videos: number } |
-              { type: "set_books"; books: number } |
+              { type: "set_hours"; hours: number | "" } |
+              { type: "set_visits"; visits: number | "" } |
+              { type: "set_studies"; studies: number | "" } |
+              { type: "set_videos"; videos: number | "" } |
+              { type: "set_books"; books: number | "" } |
               { type: "set_comment"; comment: string } |
               { type: "reset" }
 
-const initialState = {
+const initialState: State = {
     date: "",
-    hours: 0,
-    visits: 0,
-    studies: 0,
-    videos: 0,
-    books: 0,
+    hours: "",
+    visits: "",
+    studies: "",
+    videos: "",
+    books: "",
     comment: ""
   }
 
@@ -155,7 +155,7 @@ export default function NewReportPage() {
               
               <div className="flex items-center justify-between gap-1 p-2 rounded-xl h-10 w-full border-1 border-gray-400 focus-within:border-main shadow-sm bg-[var(--card-color)]">
                 <HiOutlineClock className="text-gray-500"/>
-                <input type="number" value={state.hours} onChange={(e) => {dispatch({type: "set_hours", hours: Number(e.target.value) || 0})}} className="outline-0 border-0 h-full w-full font-[family-name:var(--sora)] text-blue" placeholder="How many hours did you spend in the field?" required/>
+                <input type="number" value={state.hours} onChange={(e) => {dispatch({type: "set_hours", hours: e.target.value === "" ? "" : Number(e.target.value)})}} className="outline-0 border-0 h-full w-full font-[family-name:var(--sora)] text-blue" placeholder="How many hours did you spend in the field?" required/>
               </div>
             </div>
 
@@ -165,7 +165,7 @@ export default function NewReportPage() {
               
               <div className="flex items-center justify-between gap-1 p-2 rounded-xl h-10 w-full border-1 border-gray-400 focus-within:border-main shadow-sm bg-[var(--card-color)]">
                 <BsPeople className="text-gray-500"/>
-                <input type="number" value={state.visits} onChange={(e) => {dispatch({type: "set_visits", visits: Number(e.target.value) || 0})}} className="outline-0 border-0 h-full w-full font-[family-name:var(--sora)] text-blue" placeholder="How many return visits did you get today?" required/>
+                <input type="number" value={state.visits} onChange={(e) => {dispatch({type: "set_visits", visits: e.target.value === "" ? "" : Number(e.target.value)})}} className="outline-0 border-0 h-full w-full font-[family-name:var(--sora)] text-blue" placeholder="How many return visits did you get today?" required/>
               </div>
             </div>
 
@@ -174,7 +174,7 @@ export default function NewReportPage() {
               
               <div className="flex items-center justify-between gap-1 p-2 rounded-xl h-10 w-full border-1 border-gray-400 focus-within:border-main shadow-sm bg-[var(--card-color)]">
                 <HiOutlineBookOpen className="text-gray-500"/>
-                <input type="number" value={state.studies} onChange={(e) => {dispatch({type: "set_studies", studies: Number(e.target.value) || 0})}} className="outline-0 border-0 h-full w-full font-[family-name:var(--sora)] text-blue" placeholder="Did you manage to get any Bible Studies today?" required/>
+                <input type="number" value={state.studies} onChange={(e) => {dispatch({type: "set_studies", studies: e.target.value === "" ? "" : Number(e.target.value)})}} className="outline-0 border-0 h-full w-full font-[family-name:var(--sora)] text-blue" placeholder="Did you manage to get any Bible Studies today?" required/>
               </div>
             </div>
 
@@ -183,7 +183,7 @@ export default function NewReportPage() {
               
               <div className="flex items-center justify-between gap-1 p-2 rounded-xl h-10 w-full border-1 border-gray-400 focus-within:border-main shadow-sm bg-[var(--card-color)]">
                 <HiOutlinePlayCircle className="text-gray-500"/>
-                <input type="number" value={state.videos} onChange={(e) => {dispatch({type: "set_videos", videos: Number(e.target.value) || 0})}} className="outline-0 border-0 h-full w-full font-[family-name:var(--sora)] text-blue" placeholder="Number of videos you showed?" required/>
+                <input type="number" value={state.videos} onChange={(e) => {dispatch({type: "set_videos", videos: e.target.value === "" ? "" : Number(e.target.value)})}} className="outline-0 border-0 h-full w-full font-[family-name:var(--sora)] text-blue" placeholder="Number of videos you showed?" required/>
               </div>
             </div>
 
