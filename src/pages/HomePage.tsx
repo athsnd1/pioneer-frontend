@@ -120,7 +120,7 @@ export default function HomePage() {
         reportsError ? <NotCreated Icon={HiOutlineExclamationCircle} errorText="Failed to load reports" /> :
 
         reports && reports.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-items-center w-full h-max py-6 px-4 mb-10 bg-white ml-4 mr-6 rounded-xl shadow-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-14 sm:gap-6 justify-items-center w-full h-max py-6 px-4 mb-10 bg-white ml-4 rounded-xl shadow-sm">
 
             <div className="flex flex-col items-center gap-2 w-full -ml-10"> 
               <div className="text-blue font-sora text-md text-center">Monthly Report Data Trend</div>
@@ -128,7 +128,7 @@ export default function HomePage() {
             </div>
 
             <div className="flex flex-col items-center gap-2"> 
-              <div className="text-blue font-sora text-md text-center">Report Data Breakdown</div>
+              <div className="text-blue font-sora text-md text-center -mb-15 sm:mb-0">Report Data Breakdown</div>
               { stats && <ReportPieChart stats={stats} />}
             </div>
 
@@ -142,7 +142,7 @@ export default function HomePage() {
       <div className=" ml-4 mt-4 mb-3 w-full flex items-center justify-between">
         <span className="font-normal text-xl font-[family-name:var(--bric)] text-blue">Recent Reports — Reports You've Created</span>
 
-        <select onChange={(e) => setViewType(e.target.value as "card" | "table")} className="ml-4 bg-white/50 border-1 border-gray-300 rounded-md px-2 py-1 h-10 text-blue font-sora">
+        <select onChange={(e) => setViewType(e.target.value as "card" | "table")} className="ml-4 bg-white/50 border-1 border-gray-300 rounded-md px-2 py-1 h-10 text-blue font-sora cursor-pointer">
           <option value="card">Card View</option>
           <option value="table">Table View</option>
         </select>
@@ -156,7 +156,7 @@ export default function HomePage() {
           />
         ) : reports && reports.length > 0 ?
         
-        viewType === "card" ? (<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center w-full h-max py-6 px-4 bg-white ml-4 mr-6 rounded-xl shadow-sm border-1 border-gray-300 mb-20">
+        viewType === "card" ? (<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center w-full h-max py-6 px-4 bg-white ml-4 rounded-xl shadow-sm border-1 border-gray-300 mb-20">
 
             {reports.map((report) => (
               <ReportCard key={report.id} id={report.id} hours={report.hours} visits={report.visits} studies={report.studies} videos={report.videos} books={report.books} date={report.date} onDelete={() => {setSelectedReport(report)}} onShow={() => {setShowReport(report)}}/>

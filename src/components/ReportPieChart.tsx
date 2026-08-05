@@ -47,7 +47,7 @@ export default function ReportPieChart({ stats }: Props) {
 
 
   return (
-    <ChartContainer config={chartConfig} className="h-[400px] w-full">
+    <ChartContainer config={chartConfig} className="h-[400px] max-w-[300px]">
         <PieChart>
             <Pie
             data={chartData}
