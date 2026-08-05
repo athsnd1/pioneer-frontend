@@ -13,14 +13,14 @@
 
 @font-face {
     font-family: "Sora";
-    src: url("src/assets/fonts/Sora-Regular.ttf") format("truetype");
+    src: url("/fonts/Sora-Regular.ttf") format("truetype");
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
     font-family: "Bric";
-    src: url("src/assets/fonts/BricolageGrotesque-Regular.ttf") format("truetype");
+    src: url("/fonts/BricolageGrotesque-Regular.ttf") format("truetype");
     font-style: normal;
     font-display: swap;
 }
