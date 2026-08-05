@@ -14,14 +14,14 @@ export default function AuthProvider({ children }: Props) {
     const [loading, setLoading] = useState<boolean>(true);
 
 
-    const baseUrl = "http://localhost:3000";
+    const baseUrl = `${import.meta.env.VITE_BACKEND_URL}`;
     
     function login (user: User) {
         setUser(user);
     }
 
     async function logout () {
-        await axios.post("http://localhost:3000/auth/logout", {}, { withCredentials: true });
+        await axios.post(`${import.meta.env.VITE_BACKEND_URL}/auth/logout`, {}, { withCredentials: true });
         setUser(null);
     }
 

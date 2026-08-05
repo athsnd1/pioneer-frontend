@@ -30,7 +30,7 @@ export default function LogsPage() {
   const deleteMutation = useMutation({
       mutationFn: async (id: string) => {
 
-          await axios.delete(`http://localhost:3000/report/delete/${id}`, { withCredentials: true });
+          await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/report/delete/${id}`, { withCredentials: true });
 
       },
       onSuccess: () => {

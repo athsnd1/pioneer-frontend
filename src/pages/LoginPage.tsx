@@ -45,7 +45,7 @@ export default function LoginPage() {
       return;
     }
 
-    const loginUrl = `http://localhost:3000/auth/login`;
+    const loginUrl = `${import.meta.env.VITE_BACKEND_URL}/auth/login`;
 
     setLoading(true);
     

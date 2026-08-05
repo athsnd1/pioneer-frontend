@@ -3,7 +3,7 @@ import axios from "axios";
 
 export async function getReports(): Promise<Report[]> {
 
-    const response = await axios.get("http://localhost:3000/report/", { withCredentials: true });
+    const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/report/`, { withCredentials: true });
 
     return response.data.reports;
 }

@@ -35,7 +35,7 @@ export default function RegisterPage() {
       return;
     }
 
-    const regUrl = `http://localhost:3000/auth/register`;
+    const regUrl = `${import.meta.env.VITE_BACKEND_URL}/auth/register`;
 
     setLoading(true);
     

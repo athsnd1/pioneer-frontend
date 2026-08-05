@@ -33,7 +33,7 @@ export default function ViewStudentsPage() {
 
       mutationFn: async (id: string) => {
 
-          await axios.delete(`http://localhost:3000/students/delete/${id}`, { withCredentials: true });
+          await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/students/delete/${id}`, { withCredentials: true });
 
       },
       onSuccess: () => {

@@ -18,7 +18,6 @@ import { HiOutlineChartBar, HiOutlineClipboardDocumentList, HiOutlineExclamation
 import { Table, 
 TableBody, TableCell, TableHead, TableHeader, TableRow
 } from "@/components/ui/table";
-import ReportFieldChart from "#components/ReportFieldChart";
 import ReportPieChart from "#components/ReportPieChart";
 import MonthlyChart from "#components/MonthlyChart";
 
@@ -45,7 +44,7 @@ export default function HomePage() {
   const deleteMutation = useMutation({
       mutationFn: async (id: string) => {
 
-          await axios.delete(`http://localhost:3000/report/delete/${id}`, { withCredentials: true });
+          await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/report/delete/${id}`, { withCredentials: true });
 
       },
       onSuccess: () => {
@@ -61,7 +60,7 @@ export default function HomePage() {
       }
   });
 
-  const { data: monthlyData, error: dataError } = useQuery({
+  const { data: monthlyData } = useQuery({
     queryKey: ["monthly-stats"],
     queryFn: async () => {
       const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/report/monthly-stats`, { withCredentials: true });

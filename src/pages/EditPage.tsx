@@ -91,7 +91,7 @@ export default function EditPage() {
     {
       mutationFn: async (id: string) => {
 
-        const response = await axios.put(`http://localhost:3000/report/edit/${id}`, state, { withCredentials: true });
+        const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/report/edit/${id}`, state, { withCredentials: true });
         return response.data;
 
       },

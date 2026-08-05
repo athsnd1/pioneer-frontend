@@ -82,7 +82,7 @@ export default function NewReportPage() {
   const mutation = useMutation(
     {
       mutationFn: async (report: State) => {
-        const response = await axios.post("http://localhost:3000/report/create", report, { withCredentials: true });
+        const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/report/create`, report, { withCredentials: true });
         return response.data;
       },
 
