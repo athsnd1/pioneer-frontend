@@ -53,7 +53,7 @@ export default function LogsPage() {
   }
 
   return (
-    <div className="bg-gray-100 flex flex-col h-dvh pr-8 pt-4">
+    <div className="bg-gray-100 flex flex-col pr-8 pt-4">
 
       <Helmet>
 
@@ -65,14 +65,16 @@ export default function LogsPage() {
 
       <PageInfo prevPage="Dashboard" currentPage="Logs" pageTitle="Recent Reports" pageDesc="View and modify recent reports you've created."/>
       
-      <div className="font-normal text-xl font-[family-name:var(--bric)] ml-4 text-blue mb-3">Recent Reports — Your Recent Reports</div>
+      <div className="font-normal text-xl font-[family-name:var(--bric)] ml-4 text-blue mb-3">Recent Reports</div>
       
       {
               reportsError ? (
+                
                 <NotCreated
                   Icon={HiOutlineClipboardDocumentList}
                   errorText="Error fetching reports"
                 />
+
               ) : reports && reports.length > 0 ?
               
               (<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center w-full h-max py-6 px-4 mb-30 bg-white ml-4 mr-6 rounded-xl shadow-sm border-1 border-gray-300">

@@ -17,12 +17,12 @@ export default function Navbar({ icons = [] }: Props) {
   const [menuShowing, setMenuShowing] = useState<boolean>(false);
 
   return (
-    <nav className="w-screen py-4 px-3 border-b border-gray-300 flex items-center bg-white">
+    <nav className="sticky top-0 z-50 w-screen py-4 px-3 border-b border-gray-300 flex items-center bg-white">
 
         <div className="text-2xl font-[family-name:var(--bric)] font-medium text-[var(--main-color)] flex items-center gap-0.5">
           <HiOutlineClipboardDocumentCheck className="text-3xl"/>
 
-          <span className="hidden sm:block"> Pioneer</span>
+          <span className={`${!user ? "block" : "hidden"} sm:block`}> Pioneer</span>
          
         </div>
 

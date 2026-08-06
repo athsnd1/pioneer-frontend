@@ -4,7 +4,6 @@ import ErrorPage from "../pages/ErrorPage.tsx";
 import ProtectedRoute from "./ProtectedRoute.tsx";
 import DashboardLayout from "../layouts/DashboardLayout.tsx";
 import LoadingPage from "../pages/LoadingPage";
-import DashboardSkeleton from "../components/DashboardSkeleton";
 
 const LoginPage = lazy(() => import("../pages/LoginPage"));
 const RegisterPage = lazy(() => import("../pages/RegisterPage"));
@@ -30,7 +29,7 @@ const router = createBrowserRouter([
         children: [
                     {
                         index: true,
-                        element: <Suspense fallback={<DashboardSkeleton />}><HomePage /></Suspense>
+                        element: <Suspense fallback={<LoadingPage />}><HomePage /></Suspense>
                     },
                     {
                         path: "logs",

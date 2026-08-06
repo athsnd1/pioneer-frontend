@@ -74,7 +74,7 @@ export default function ViewStudentsPage() {
 
       <PageInfo prevPage="Dashboard" currentPage="View Students" pageTitle="View Students" pageDesc="View all your Bible Students."/>
 
-      <div className="font-normal text-xl font-[family-name:var(--bric)] ml-4 text-blue mb-3">View Students — Manage your Bible Students</div>
+      <div className="font-normal text-xl font-[family-name:var(--bric)] ml-4 text-blue mb-3">View Students</div>
 
       {
         studentsError ? 

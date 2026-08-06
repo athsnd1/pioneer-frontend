@@ -161,7 +161,7 @@ export default function EditPage() {
               
               <div className="flex items-center justify-between gap-1 p-2 rounded-xl h-10 w-full border-1 border-gray-400 focus-within:border-main shadow-sm bg-[var(--card-color)]">
                 <HiOutlineClock className="text-gray-500"/>
-                <input type="number" value={state.hours} onChange={(e) => {dispatch({type: "set_hours", hours: parseInt(e.target.value)})}} className="outline-0 border-0 h-full w-full font-[family-name:var(--sora)] text-blue" placeholder="How many hours did you spend in the field?" required/>
+                <input type="number" value={state.hours} onChange={(e) => {dispatch({type: "set_hours", hours: parseInt(e.target.value)})}} className="outline-0 border-0 h-full w-full font-[family-name:var(--sora)] text-blue" placeholder="Enter number of hours" required/>
               </div>
             </div>
 
@@ -171,7 +171,7 @@ export default function EditPage() {
               
               <div className="flex items-center justify-between gap-1 p-2 rounded-xl h-10 w-full border-1 border-gray-400 focus-within:border-main shadow-sm bg-[var(--card-color)]">
                 <BsPeople className="text-gray-500"/>
-                <input type="number" value={state.visits} onChange={(e) => {dispatch({type: "set_visits", visits: parseInt(e.target.value)})}} className="outline-0 border-0 h-full w-full font-[family-name:var(--sora)] text-blue" placeholder="How many return visits did you get today?" required/>
+                <input type="number" value={state.visits} onChange={(e) => {dispatch({type: "set_visits", visits: parseInt(e.target.value)})}} className="outline-0 border-0 h-full w-full font-[family-name:var(--sora)] text-blue" placeholder="Enter number of visits" required/>
               </div>
             </div>
 
@@ -180,7 +180,7 @@ export default function EditPage() {
               
               <div className="flex items-center justify-between gap-1 p-2 rounded-xl h-10 w-full border-1 border-gray-400 focus-within:border-main shadow-sm bg-[var(--card-color)]">
                 <HiOutlineBookOpen className="text-gray-500"/>
-                <input type="number" value={state.studies} onChange={(e) => {dispatch({type: "set_studies", studies: parseInt(e.target.value)})}} className="outline-0 border-0 h-full w-full font-[family-name:var(--sora)] text-blue" placeholder="Did you manage to get any Bible Studies today?" required/>
+                <input type="number" value={state.studies} onChange={(e) => {dispatch({type: "set_studies", studies: parseInt(e.target.value)})}} className="outline-0 border-0 h-full w-full font-[family-name:var(--sora)] text-blue" placeholder="Enter number of Bible studies" required/>
               </div>
             </div>
 
@@ -189,7 +189,7 @@ export default function EditPage() {
               
               <div className="flex items-center justify-between gap-1 p-2 rounded-xl h-10 w-full border-1 border-gray-400 focus-within:border-main shadow-sm bg-[var(--card-color)]">
                 <HiOutlinePlayCircle className="text-gray-500"/>
-                <input type="number" value={state.videos} onChange={(e) => {dispatch({type: "set_videos", videos: parseInt(e.target.value)})}} className="outline-0 border-0 h-full w-full font-[family-name:var(--sora)] text-blue" placeholder="Number of videos you showed?" required/>
+                <input type="number" value={state.videos} onChange={(e) => {dispatch({type: "set_videos", videos: parseInt(e.target.value)})}} className="outline-0 border-0 h-full w-full font-[family-name:var(--sora)] text-blue" placeholder="Enter number of videos shown" required/>
               </div>
             </div>
 
@@ -198,7 +198,7 @@ export default function EditPage() {
               
               <div className="flex items-center justify-between gap-1 p-2 rounded-xl h-10 w-full border-1 border-gray-400 focus-within:border-main shadow-sm bg-[var(--card-color)]">
                 <HiOutlineDocumentText className="text-gray-500"/>
-                <input type="number" value={state.books} onChange={(e) => {dispatch({type: "set_books", books: parseInt(e.target.value)})}} className="outline-0 border-0 h-full w-full font-[family-name:var(--sora)] text-blue" placeholder="How many books did you place?" required/>
+                <input type="number" value={state.books} onChange={(e) => {dispatch({type: "set_books", books: parseInt(e.target.value)})}} className="outline-0 border-0 h-full w-full font-[family-name:var(--sora)] text-blue" placeholder="Enter number of books" required/>
               </div>
             </div>
 
@@ -206,7 +206,7 @@ export default function EditPage() {
               <label className="text-lg font-[family-name:var(--bric)] ">Add a different Comment</label>
               
               <div className="flex items-center justify-between gap-1 p-2 rounded-xl h-20 w-full border-1 border-gray-400 focus-within:border-main shadow-sm bg-[var(--card-color)]">
-                <textarea value={state.comment} onChange={(e) => {dispatch({type: "set_comment", comment: e.target.value})}} className="outline-0 border-0 h-full w-full font-[family-name:var(--sora)] text-blue" placeholder="What was field service like today?"/>
+                <textarea value={state.comment} onChange={(e) => {dispatch({type: "set_comment", comment: e.target.value})}} className="outline-0 border-0 h-full w-full font-[family-name:var(--sora)] text-blue" placeholder="Leave a remark..."/>
               </div>
             </div>
 

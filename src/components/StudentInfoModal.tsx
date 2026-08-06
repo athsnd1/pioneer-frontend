@@ -1,6 +1,8 @@
-import { HiOutlineChatBubbleLeft, HiOutlinePlayCircle, HiXMark } from "react-icons/hi2";
-import { HiOutlineBookOpen, HiOutlineDocumentText } from "react-icons/hi";
+import { HiOutlineChatBubbleLeft, HiXMark } from "react-icons/hi2";
 import type { Student } from "@/types/Student";
+import { BsHouseDoor } from 'react-icons/bs';
+import { TbAddressBook } from 'react-icons/tb';
+import { BiPhoneCall } from 'react-icons/bi';
 
 type Props = {
     onClose: () => void;
@@ -27,7 +29,7 @@ export default function StudentInfoModal({ student, onClose }: Props) {
                 <div className="w-full flex items-center justify-between">
 
                     <div className="flex items-center gap-1">
-                        <HiOutlineBookOpen className="text-lg text-orange-500"/>
+                        <TbAddressBook className="text-lg text-orange-500"/>
                         <span className="text-md font-sora text-orange-700 whitespace-nowrap">Name</span>
                     </div>
 
@@ -40,7 +42,7 @@ export default function StudentInfoModal({ student, onClose }: Props) {
                 <div className="w-full flex items-center justify-between">
 
                     <div className="flex items-center gap-1">
-                        <HiOutlinePlayCircle className="text-lg text-emerald-500"/>
+                        <BsHouseDoor className="text-lg text-emerald-500"/>
                         <span className="text-md font-sora text-emerald-700 whitespace-nowrap">Address</span>
                     </div>
 
@@ -53,13 +55,13 @@ export default function StudentInfoModal({ student, onClose }: Props) {
                 <div className="w-full flex items-center justify-between">
 
                     <div className="flex items-center gap-1">
-                        <HiOutlineDocumentText className="text-lg text-indigo-500"/>
+                        <BiPhoneCall className="text-lg text-indigo-500"/>
                         <span className="text-md font-sora text-indigo-700 whitespace-nowrap">Number</span>
                     </div>
 
                     <hr className="border-gray-400 w-full mx-4"/>
 
-                    <span className="text-md text-indigo-700 font-bric">{student?.phone}</span>
+                    <span className="text-md text-indigo-700 font-bric whitespace-nowrap">{student?.phone}</span>
 
                 </div>
 

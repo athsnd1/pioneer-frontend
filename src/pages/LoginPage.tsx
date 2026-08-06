@@ -140,7 +140,7 @@ export default function LoginPage() {
                   <label htmlFor="remember-me" className="text-md font-medium ml-0.5 font-[family-name:var(--sora)] text-[var(--deep-blue)]">Remember Me</label>
                 </div>
 
-                <Link to="/forgot-password" className="text-blue font-sora hover:underline hover:underline-offset-2 hover:underline-blue text-sm font-medium">Forgot Password?</Link>
+                {/* <Link to="/forgot-password" className="text-blue font-sora hover:underline hover:underline-offset-2 hover:underline-blue text-sm font-medium">Forgot Password?</Link> */}
               </div>
       
               <button type="submit" disabled={loading} className={`flex items-center justify-center rounded-4xl mt-10 min-w-70 h-15 bg-[var(--main-color)] text-white font-[family-name:var(--sora)] hover:opacity-75 transition ${ loading ? "cursor-not-allowed" : "cursor-pointer"}`}>{ loading ? "Logging in..." : "Sign In"}</button>

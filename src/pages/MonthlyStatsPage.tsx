@@ -39,7 +39,7 @@ export default function MonthlyStatsPage() {
 
       <PageInfo prevPage="Dashboard" currentPage="Monthly Stats" pageTitle="Monthly Stats" pageDesc="Revisit your monthly report stats."/>
       
-      <div className="font-normal text-xl font-[family-name:var(--bric)] ml-4 text-blue mb-3">Monthly Stats — Your Monthly Stats</div>
+      <div className="font-normal text-xl font-[family-name:var(--bric)] ml-4 text-blue mb-3">Monthly Stats</div>
       
       {
               dataError ? (
@@ -57,12 +57,12 @@ export default function MonthlyStatsPage() {
                   <TableHeader className="bg-gray-100">
 
                     <TableRow className="font-sora [&_th:not(:last-child)]:border-r-2 [&_th:not(:last-child)]:border-gray-300">
-                      <TableHead className="whitespace-nowrap text-gray-600 text-sm font-medium p-4">Date</TableHead>
-                      <TableHead className="text-gray-600 text-sm font-medium p-4">Hours</TableHead>
-                      <TableHead className="text-gray-600 text-sm font-medium p-4">Return Visits</TableHead>
-                      <TableHead className="text-gray-600 text-sm font-medium p-4">Bible Studies</TableHead>
-                      <TableHead className="text-gray-600 text-sm font-medium p-4">Videos</TableHead>
-                      <TableHead className="text-gray-600 text-sm font-medium p-4">Placements</TableHead>
+                      <TableHead className="whitespace-nowrap text-gray-600 text-sm font-medium p-2 pl-4">Date</TableHead>
+                      <TableHead className="text-gray-600 text-sm font-medium p-2 pl-4">Hours</TableHead>
+                      <TableHead className="text-gray-600 text-sm font-medium p-2 pl-4">Return Visits</TableHead>
+                      <TableHead className="text-gray-600 text-sm font-medium p-2 pl-4">Bible Studies</TableHead>
+                      <TableHead className="text-gray-600 text-sm font-medium p-2 pl-4">Videos</TableHead>
+                      <TableHead className="text-gray-600 text-sm font-medium p-2 pl-4">Placements</TableHead>
                     </TableRow>
 
                   </TableHeader>
@@ -72,12 +72,12 @@ export default function MonthlyStatsPage() {
                     {
                       monthlyData.map((data: MonthlyStats, index: number) => (
                         <TableRow key={index} className="hover:bg-gray-100 transition-colors duration-200 font-sora">
-                          <TableCell className="text-gray-800 text-sm font-medium p-4">{data.month} </TableCell>
-                          <TableCell className="text-gray-800 text-lg font-medium p-4">{data.hours} </TableCell>
-                          <TableCell className="text-gray-800 text-lg font-medium p-4">{data.visits} </TableCell>
-                          <TableCell className="text-gray-800 text-lg font-medium p-4">{data.studies} </TableCell>
-                          <TableCell className="text-gray-800 text-lg font-medium p-4">{data.videos} </TableCell>
-                          <TableCell className="text-gray-800 text-lg font-medium p-4">{data.books} </TableCell>
+                          <TableCell className="text-gray-800 text-sm font-medium p- pl-4">{data.month} </TableCell>
+                          <TableCell className="text-gray-800 text-lg font-medium p- pl-4">{data.hours} </TableCell>
+                          <TableCell className="text-gray-800 text-lg font-medium p- pl-4">{data.visits} </TableCell>
+                          <TableCell className="text-gray-800 text-lg font-medium p- pl-4">{data.studies} </TableCell>
+                          <TableCell className="text-gray-800 text-lg font-medium p- pl-4">{data.videos} </TableCell>
+                          <TableCell className="text-gray-800 text-lg font-medium p- pl-4">{data.books} </TableCell>
                         </TableRow>
                       ))
                     }

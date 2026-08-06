@@ -4,9 +4,10 @@ type Props = {
     onClose: () => void;
     onRemoveReport: () => void;
     text?: string;
+    btnText?: string;
 }
 
-export default function ConfirmDeleteModal({ onClose, onRemoveReport, text }: Props) {
+export default function ConfirmDeleteModal({ onClose, onRemoveReport, text, btnText }: Props) {
 
 
   return (
@@ -23,7 +24,7 @@ export default function ConfirmDeleteModal({ onClose, onRemoveReport, text }: Pr
             <div className="text-lg text-main p-3 text-center font-sora">{text ? text : "Are you sure you want to delete this report?"}</div>
             
             <div className="w-full flex items-center justify-center gap-4 pb-4">
-                <button className="bg-red-700 text-white font-sora h-10 w-max p-2 border-0 rounded-lg cursor-pointer hover:opacity-85" onClick={() => {onRemoveReport(); onClose();}}>Delete</button>
+                <button className="bg-red-700 text-white font-sora h-10 w-max p-2 border-0 rounded-lg cursor-pointer hover:opacity-85" onClick={() => {onClose(); onRemoveReport();}}>{ btnText ? btnText : "Delete" }</button>
                 <button className="bg-gray-300 text-stone-900 font-sora h-10 w-max p-2 border-0 rounded-lg cursor-pointer hover:opacity-85" onClick={onClose}>Cancel</button>
             </div>
         </div>

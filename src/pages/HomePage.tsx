@@ -89,7 +89,7 @@ export default function HomePage() {
 
       <PageInfo prevPage="Dashboard" currentPage="Home" pageTitle="Home" pageDesc="View your report stats and previous reports."/>
 
-      <div className="font-normal text-xl font-[family-name:var(--bric)] ml-4 mb-3 text-blue">Stats — Report Stats</div>
+      <div className="font-normal text-xl font-[family-name:var(--bric)] ml-4 mb-3 text-blue">Stats</div>
 
       {
         statsError ? (
@@ -114,7 +114,7 @@ export default function HomePage() {
         )
       }
 
-      <div className="ml-4 mt-10 text-blue font-bric text-xl font-normal mb-3">Analytics — Your Data, Visualized</div>
+      <div className="ml-4 mt-10 text-blue font-bric text-xl font-normal mb-3">Analytics</div>
 
       {
         reportsError ? <NotCreated Icon={HiOutlineExclamationCircle} errorText="Failed to load reports" /> :
@@ -140,7 +140,7 @@ export default function HomePage() {
 
 
       <div className=" ml-4 mt-4 mb-3 w-full flex items-center justify-between">
-        <span className="font-normal text-xl font-[family-name:var(--bric)] text-blue">Recent Reports — Reports You've Created</span>
+        <span className="font-normal text-xl font-[family-name:var(--bric)] text-blue">Recent Reports</span>
 
         <select onChange={(e) => setViewType(e.target.value as "card" | "table")} className="ml-4 bg-white/50 border-1 border-gray-300 rounded-md px-2 py-1 h-10 text-blue font-sora cursor-pointer">
           <option value="card">Card View</option>
@@ -169,13 +169,13 @@ export default function HomePage() {
             <TableHeader className="bg-gray-100">
 
               <TableRow className="font-sora [&_th:not(:last-child)]:border-r-2 [&_th:not(:last-child)]:border-gray-300">
-                <TableHead className="whitespace-nowrap text-gray-600 text-sm font-medium p-4">Date</TableHead>
-                <TableHead className="text-gray-600 text-sm font-medium p-4">Hours</TableHead>
-                <TableHead className="text-gray-600 text-sm font-medium p-4">Return Visits</TableHead>
-                <TableHead className="text-gray-600 text-sm font-medium p-4">Bible Studies</TableHead>
-                <TableHead className="text-gray-600 text-sm font-medium p-4">Videos</TableHead>
-                <TableHead className="text-gray-600 text-sm font-medium p-4">Placements</TableHead>
-                <TableHead className="text-right text-gray-600 text-sm font-medium p-4">Actions</TableHead>
+                <TableHead className="whitespace-nowrap text-gray-600 text-sm font-medium p-2 pl-4">Date</TableHead>
+                <TableHead className="text-gray-600 text-sm font-medium p-2 pl-4">Hours</TableHead>
+                <TableHead className="text-gray-600 text-sm font-medium p-2 pl-4">Return Visits</TableHead>
+                <TableHead className="text-gray-600 text-sm font-medium p-2 pl-4">Bible Studies</TableHead>
+                <TableHead className="text-gray-600 text-sm font-medium p-2 pl-4">Videos</TableHead>
+                <TableHead className="text-gray-600 text-sm font-medium p-2 pl-4">Placements</TableHead>
+                <TableHead className="text-right text-gray-600 text-sm font-medium p-2 pl-4">Actions</TableHead>
               </TableRow>
 
             </TableHeader>
@@ -184,13 +184,13 @@ export default function HomePage() {
 
               {reports?.map((report => (
                 <TableRow key={report.id} className="hover:bg-gray-100 transition-colors duration-200 font-sora">
-                  <TableCell className="text-gray-800 text-sm font-medium p-4">{report.date}</TableCell>
-                  <TableCell className="text-gray-800 text-lg font-medium p-4">{report.hours}</TableCell>
-                  <TableCell className="text-gray-800 text-lg font-medium p-4">{report.visits}</TableCell>
-                  <TableCell className="text-gray-800 text-lg font-medium p-4">{report.studies}</TableCell>
-                  <TableCell className="text-gray-800 text-lg font-medium p-4">{report.videos}</TableCell>
-                  <TableCell className="text-gray-800 text-lg font-medium p-4">{report.books}</TableCell>
-                  <TableCell className="text-right flex items-center justify-end gap-2 p-4">
+                  <TableCell className="text-gray-800 text-sm font-medium p-2 pl-4">{report.date}</TableCell>
+                  <TableCell className="text-gray-800 text-lg font-medium p-2 pl-4">{report.hours}</TableCell>
+                  <TableCell className="text-gray-800 text-lg font-medium p-2 pl-4">{report.visits}</TableCell>
+                  <TableCell className="text-gray-800 text-lg font-medium p-2 pl-4">{report.studies}</TableCell>
+                  <TableCell className="text-gray-800 text-lg font-medium p-2 pl-4">{report.videos}</TableCell>
+                  <TableCell className="text-gray-800 text-lg font-medium p-2 pl-4">{report.books}</TableCell>
+                  <TableCell className="text-right flex items-center justify-end gap-2 p-2 pl-4">
                     <button onClick={() => {setShowReport(report)}}><HiOutlineEye className="text-blue-500 text-xl cursor-pointer hover:opacity-85"/></button>
                     <button onClick={() => {setSelectedReport(report)}}><HiOutlineTrash className="text-red-500 text-xl cursor-pointer hover:opacity-85"/></button>
                   </TableCell>

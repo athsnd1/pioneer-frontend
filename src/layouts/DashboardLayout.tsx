@@ -4,7 +4,7 @@ import {  BiHome } from "react-icons/bi";
 import { CgAdd } from "react-icons/cg";
 import { TbListCheck } from "react-icons/tb";
 import { AnimatePresence, motion } from "motion/react";
-import DashboardSkeleton from "../components/DashboardSkeleton";
+import Loading from "#components/Loading";
 
 
 export default function DashboardLayout() {
@@ -20,7 +20,7 @@ export default function DashboardLayout() {
 
   if (navigation.state === "loading") {
       return (
-        <DashboardSkeleton />
+        <Loading />
       )
   }
 
