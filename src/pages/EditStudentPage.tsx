@@ -33,9 +33,9 @@ export default function EditStudentPage() {
     const [studentData, setStudentData] = useState<Student>({ name: "", address: "", phone: "", details: "" });
 
 
-    const handleInputChange = (e: React.FormEvent<HTMLInputElement>) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 
-        const { name, value } = e.currentTarget;
+        const { name, value } = e.target;
 
         setStudentData((prev) => ({...prev, [name]: value}));
 
@@ -128,9 +128,9 @@ export default function EditStudentPage() {
                     <div className="flex flex-col gap-0.5 w-full">
                       <label className="text-lg font-[family-name:var(--bric)] text-blue">Details</label>
                       
-                      <div className="flex items-center justify-between gap-1 p-2 rounded-xl h-10 w-full border-1 border-gray-400 focus-within:border-main shadow-sm bg-[var(--card-color)]">
+                      <div className="flex items-start gap-1 p-2 rounded-xl w-full border-1 border-gray-400 focus-within:border-main shadow-sm bg-[var(--card-color)]">
                         <HiClipboardList className="text-gray-500"/>
-                        <input type="text" name="details" value={studentData?.details} onChange={handleInputChange} className="outline-0 border-0 h-full w-full font-[family-name:var(--sora)] text-blue" placeholder="Any extra info you want to add?" required/>
+                        <textarea name="details" value={studentData?.details} onChange={handleInputChange} className="outline-0 border-0 h-15 w-full font-[family-name:var(--sora)] text-blue" placeholder="Any extra info you want to add?" required/>
                       </div>
                     </div>
                     
