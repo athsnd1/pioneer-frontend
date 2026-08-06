@@ -57,6 +57,10 @@ export default function HomePage() {
           queryClient.invalidateQueries({
               queryKey: ["reports-stats"]
           });
+
+          queryClient.invalidateQueries({
+              queryKey: ["monthly-stats"]
+          });
       }
   });
 
