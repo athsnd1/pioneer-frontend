@@ -54,7 +54,7 @@ export default function AuthProvider({ children }: Props) {
         } finally {
             setLoading(false);
         }
-    }, []);
+    }, [baseUrl]);
 
   return (
     <AuthContext.Provider value={{user, loading, checkAuth, login, logout}}>
