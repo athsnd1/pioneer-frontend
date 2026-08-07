@@ -53,7 +53,7 @@ export default function LogsPage() {
   }
 
   return (
-    <div className="bg-gray-100 flex flex-col pr-8 pt-4">
+    <div className="bg-gray-100 flex flex-col pr-8 pt-4 h-dvh">
 
       <Helmet>
 

@@ -79,7 +79,7 @@ export default function HomePage() {
   }
 
   return (
-    <div className="bg-gray-100 pt-4 pr-8">
+    <div className="bg-gray-100 pt-4 pr-8 pb-8">
 
       <Helmet>
 
@@ -118,7 +118,7 @@ export default function HomePage() {
         )
       }
 
-      <div className="ml-4 mt-10 text-blue font-bric text-xl font-normal mb-3">Analytics</div>
+      <div className="ml-4 mt-15 text-blue font-bric text-xl font-normal mb-3">Analytics</div>
 
       {
         reportsError ? <NotCreated Icon={HiOutlineExclamationCircle} errorText="Failed to load reports" /> :
@@ -143,7 +143,7 @@ export default function HomePage() {
       }
 
 
-      <div className=" ml-4 mt-4 mb-3 w-full flex items-center justify-between">
+      <div className=" ml-4 mt-15 mb-3 w-full flex items-center justify-between">
         <span className="font-normal text-xl font-[family-name:var(--bric)] text-blue">Recent Reports</span>
 
         <select onChange={(e) => setViewType(e.target.value as "card" | "table")} className="ml-4 bg-white/50 border-1 border-gray-300 rounded-md px-2 py-1 h-10 text-blue font-sora cursor-pointer">

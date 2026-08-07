@@ -70,21 +70,21 @@ export default function ReportFieldChart({ stats }: Props) {
             <CartesianGrid vertical={false} />
 
             <XAxis
-            dataKey="category"
-            tick={{
-                fontFamily: "var(--font-sora)",
-                fontSize: 12,
-                fill: "#475569",
-                fontWeight: 500,
-            }}
+                dataKey="category"
+                tick={{
+                    fontFamily: "var(--font-sora)",
+                    fontSize: 12,
+                    fill: "#475569",
+                    fontWeight: 500,
+                }}
             />
 
             <YAxis
-            tick={{
-                fontFamily: "var(--font-sora)",
-                fontSize: 12,
-                fill: "#475569",
-            }}
+                tick={{
+                    fontFamily: "var(--font-sora)",
+                    fontSize: 12,
+                    fill: "#475569",
+                }}
             />
 
             <ChartTooltip content={<ChartTooltipContent />}/>
