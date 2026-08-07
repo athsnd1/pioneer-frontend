@@ -19,11 +19,15 @@ export default function CreateNewPassword() {
 
     useEffect(() => {
 
-        if (pass !== mainPass) {
-            setNotMatching(true);
-        } else {
-            setNotMatching(false);
-        }
+        const setPassword = () => {
+            if (pass !== mainPass) {
+                setNotMatching(true);
+            } else {
+                setNotMatching(false);
+            }
+        };
+
+        setPassword();
 
     }, [pass, mainPass]);
 
