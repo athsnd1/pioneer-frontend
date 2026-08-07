@@ -74,9 +74,13 @@ export default function EditStudentPage() {
 
         if (!studentGotten) return;
 
-        if (studentGotten) {
+        const setStudent = () => {
+          if (studentGotten) {
             setStudentData({ name: studentGotten.name, address: studentGotten.address, phone: studentGotten.phone, details: studentGotten.details });
-        }
+          }
+        };
+
+        setStudent();
 
     }, [studentGotten]);
 

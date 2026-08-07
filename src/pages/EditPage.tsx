@@ -9,6 +9,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { getReport } from "../api/getReport";
 import Footer from "../components/Footer";
+import { useEffect } from "react";
 
 
 type State = {
@@ -130,6 +131,28 @@ export default function EditPage() {
      
     mutation.mutate(id!);
   };
+
+  useEffect(() => {
+  
+      if (!report) return;
+
+      const setReport = () => {
+        if (report) {
+
+          dispatch({type: "set_date", date: report.date});
+          dispatch({type: "set_hours", hours: report.hours});
+          dispatch({type: "set_visits", visits: report.visits});
+          dispatch({type: "set_videos", videos: report.videos});
+          dispatch({type: "set_studies", studies: report.studies});
+          dispatch({type: "set_books", books: report.books});
+          dispatch({type: "set_comment", comment: report.comment});
+
+        }
+      };
+
+      setReport();
+
+  }, [report]);
 
   return (
     <div className="bg-bg pt-6">
