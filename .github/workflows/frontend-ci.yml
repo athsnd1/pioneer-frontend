@@ -27,6 +27,14 @@ jobs:
             - name: Setup Linter
               run: npm run lint
 
+            - name: Run unit and integration test
+              run: npm run test
+
             - name: Build project
               run: npm run build
                 
+            - name: Install playwright browsers
+              run: npx playwright install --with-deps
+
+            - name: Run playwright tests
+              run: npx playwright test

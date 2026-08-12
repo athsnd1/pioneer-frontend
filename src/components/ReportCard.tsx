@@ -22,7 +22,7 @@ export default function ReportCard({id, hours = 0, visits = 0, studies = 0, vide
     const navigate = useNavigate();
 
   return (
-    <div className=" rounded-xl bg-[var(--card-color)] font-[family-name:var(--sora)] flex sm:items-center md:flex-col md:items-center  justify-between w-full h-max border-1 border-gray-300 cursor-pointer hover:bg-gray-100 transition-all overflow-x-auto" onClick={onShow}>
+    <div className=" rounded-xl bg-[var(--card-color)] font-[family-name:var(--sora)] flex sm:items-center md:flex-col md:items-center  justify-between w-full h-max border-1 border-gray-300 cursor-pointer hover:bg-gray-100  overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-none transition-all" onClick={onShow}>
 
         <div className="flex flex-col md:flex-row items-start gap-3 w-full justify-between p-3">
 
@@ -56,7 +56,7 @@ export default function ReportCard({id, hours = 0, visits = 0, studies = 0, vide
 
         </div>
 
-        <div className="hover:opacity-85 hover:scale-101 transition-all flex flex-col md:flex-row items-center justify-center gap-5 w-full md:border-t-1 border-gray-300 md:p-3" >
+        <div className="hover:opacity-85 transition-all flex flex-col md:flex-row items-center justify-center gap-5 w-full md:border-t-1 border-gray-300 md:p-3" >
             <BiTrash className="text-2xl text-red-700 hover:scale-101" onClick={(e) => { e.stopPropagation(); onDelete(); }}/>
             <BiEditAlt className="text-2xl text-orange-600 hover:scale-101" onClick={(e) => { e.stopPropagation(); navigate(`/edit/${id}`);}}/>
         </div>

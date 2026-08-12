@@ -31,9 +31,14 @@ export default function MonthlyChart({ monthlyData }: Props) {
             color: "#ef4444",
         },
     };
+
+    const MAX_MONTHS = 12;
+
+    const maxStats = monthlyData?.slice(-MAX_MONTHS);
+
   return (
     <ChartContainer config={chartConfig} className="h-[400px] w-full">
-        <LineChart data={monthlyData}>
+        <LineChart data={maxStats}>
 
             <CartesianGrid vertical={false} />
 

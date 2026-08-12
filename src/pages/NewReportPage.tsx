@@ -146,7 +146,7 @@ export default function NewReportPage() {
               <label className="text-lg font-[family-name:var(--bric)] ">Pick a Date</label>
               
               <div className="flex items-center justify-between p-2 rounded-xl h-10 w-full border-1 border-gray-400 focus-within:border-main shadow-sm bg-[var(--card-color)]">
-                <input type="date" value={state.date} onChange={(e) => {dispatch({type: "set_date", date: e.target.value})}} className="outline-0 border-0 h-full w-full font-[family-name:var(--sora)] text-blue" required/>
+                <input type="text" placeholder="Select a date" onFocus={(e) => {e.target.type = "date"}} onBlur={(e) => {if(!e.target.value) e.target.type="text"}} value={state.date} onChange={(e) => {dispatch({type: "set_date", date: e.target.value})}} className="outline-0 border-0 h-full w-full font-[family-name:var(--sora)] text-blue" required/>
               </div>
             </div>
 
