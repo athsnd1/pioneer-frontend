@@ -32,6 +32,8 @@ jobs:
 
             - name: Build project
               run: npm run build
+              env:
+                VITE_BACKEND_URL: ${{ vars.VITE_BACKEND_URL }}
                 
             - name: Install playwright browsers
               run: npx playwright install --with-deps
