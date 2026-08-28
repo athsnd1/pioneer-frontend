@@ -5,7 +5,7 @@ test("user can login", async ({ page }) => {
     await page.goto("/login");
 
     await page.getByLabel("Email").fill("attahsundayjr@gmail.com");
-    await page.getByLabel("Password").fill("815153$$Athsnd");
+    await page.getByLabel("Password").fill("123456@@ahdjyr");
     
     await page.getByRole("button", { name: "Sign In" }).click();
 
