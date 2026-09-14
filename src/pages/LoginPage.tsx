@@ -63,7 +63,7 @@ export default function LoginPage() {
 
       setLoading(false);
 
-      navigate("/");
+      navigate("/dashboard");
       
     } catch (error) {
       if (axios.isAxiosError(error)) {

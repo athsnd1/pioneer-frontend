@@ -19,12 +19,18 @@ import {
     ProvideEmail,
     CreateNewPassword
 } from "./lazyPages"
+import WelcomePage from "@/pages/WelcomePage.tsx";
 
 
 const router = createBrowserRouter([
 
     {
         path: "/",
+        element: <Suspense fallback={<LoadingPage />}><WelcomePage /></Suspense>,
+        errorElement: <ErrorPage />
+    },
+    {
+        path: "/dashboard",
         element: (<ProtectedRoute>
                     <DashboardLayout />
                 </ProtectedRoute>),
@@ -52,17 +58,17 @@ const router = createBrowserRouter([
                         errorElement: <ErrorPage />
                     },
                     {
-                        path: "/add-student",
+                        path: "add-student",
                         element: <Suspense fallback={<LoadingPage />}> <AddStudentPage /> </Suspense>,
                         errorElement: <ErrorPage />
                     },
                     {
-                        path: "/students",
+                        path: "students",
                         element: <Suspense fallback={<LoadingPage />}> <ViewStudentsPage /> </Suspense>,
                         errorElement: <ErrorPage />
                     },
                     {
-                        path: "/monthly-stats",
+                        path: "monthly-stats",
                         element: <Suspense fallback={<LoadingPage />}> <MonthlyStatsPage /> </Suspense>,
                         errorElement: <ErrorPage />
                     }
